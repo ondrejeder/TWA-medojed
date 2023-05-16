@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="cz-cs">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="resources/style1.css">
+    <title>Medojedí zajímavosti</title>
+
+    <script>
+        function toggleTheme() {
+            var theme = document.getElementsByTagName('link')[0];
+            var currentStyle = theme.getAttribute('href');
+
+            if (currentStyle == 'resources/style1.css') {
+                theme.setAttribute('href', 'resources/style2.css');
+                localStorage.setItem('selectedStyle', 'resources/style2.css');
+            } else {
+                theme.setAttribute('href', 'resources/style1.css');
+                localStorage.setItem('selectedStyle', 'resources/style1.css');
+            }
+        }
+
+        // Apply the selected style when the page loads
+        window.onload = function() {
+            var selectedStyle = localStorage.getItem('selectedStyle');
+            if (selectedStyle) {
+                var theme = document.getElementsByTagName('link')[0];
+                theme.setAttribute('href', selectedStyle);
+            }
+        }
+    </script>
+</head>
+<body>
+    <header class="center">
+        <div id="header-img" class="center">
+            <img src="resources/header_medojed.jpg" alt="Kreslený medojed">
+        </div>
+        <div id="navbar">
+            <ul>
+                <li><a href="index.html">Domů</a></li>
+                <li><a href="zoo.html">V Zoo</a></li>
+                <li><a href="videa.html">Videa</a></li>
+                <li><a href="fotky.html">Fotky</a></li>
+                <li><a href="dalsi.html">Další medojedi</a></li>
+                <li><a href="zajimavosti.html">Zajímavosti</a></li>
+            </ul>
+        </div>
+    </header>
+    <article class="center">
+        <header>
+            <h2>Přeji dobrý den</h2>
+            <div class="center">
+                <img id="side-header-img" src="resources/hello_img.jpeg" alt="Medojed Vás zdraví">
+            </div>
+        </header>
+        <section>
+
+            <h1>Zajímavosti o medojedech</h1>
+            <p>
+                Medojed je velmi zajímavé zvíře, a navíc o něm existuje celá řada zajímavostí.
+            </p>
+            <h2>Poštovní známka</h2>
+            <p>
+                Medojed se v druhé polovině minulého století vyskytl na poštovní známce v Sovětském svazu.
+                Obrázek si můžete prohlédnout níže.
+            </p>
+            <center>
+                <img src="resources/medojed_znamka.jpg" alt="Poštovní známka s medojedem" width="500px">
+            </center>
+            <h2>Maskování zvířat</h2>
+            <p>
+                Medojed se v přírodě "proslavil" jako velmi náročná kořist, a proto je pro většinu šelem vlastně
+                nezajímavý. Tohoto využívají například mláďata geparda, která jsou jako malá zbarvena právě po vzoru medojedů,
+                jak můžete vidět zde:
+            </p>
+            <center>
+                <img src="resources/medojed_gepard.jpg" alt="Gepard jako medojed" width="500px">
+            </center>
+            <h2>Nástroje</h2>
+            <p>
+                Jako jedno z pár zvířat na světě dokáže medojed používat nástroje k dosažení svých cílů.
+                Používají je například k odstrašení nepřátel, úpravě potravy nebo jako stupínky pro přěkonávání
+                překážek. Zde můžete bidět jak nástroje umí používat medojed Stoffel, kterého můžete vidět na
+                stránce "Videa".
+            </p>
+            <center>
+                <img src="resources/medojed_nastroje.jpg" alt="MEdojed používající nástroje" width="500px">
+            </center>
+
+
+        </section>
+        <aside>
+            <div class="center">
+                <h2>Chcete vidět jiný layout ?</h2>
+                <button id="themebutton" onclick="toggleTheme()">Klikněte zde !</button>
+            </div>
+        </aside>
+    </article>
+    <footer class="center">
+        Stránky vytvořeny v rámci semestrální práce. Autor: O.Eder
+    </footer>
+</body>
+</html>
